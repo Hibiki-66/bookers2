@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   root 'homes#top'
+  get 'home/about' => 'homes#about'
 
   resources :books, only: [:index, :show, :edit, :create, :update, :destroy]
   resources :users, only: [:index, :show, :edit]
