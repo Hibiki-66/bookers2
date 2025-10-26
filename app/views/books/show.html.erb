@@ -1,1 +1,33 @@
-<h1>show</h1>
+<div class="containar px-5 px-sm-0">
+  <div class="row"
+    <div class="col-md-3">
+    </div>
+    
+    <div class="offset-md-1">
+    </div>
+
+    <div class="col-md-8">
+      <h1>Book detail</h1>
+      <table class = "table table-striped">
+        <tbody>
+          <tr>
+            <td>
+              <%= link_to user_path(@book.user.id) do %>
+                <%= image_tag @book.user.get_profile_image(100,100) %>
+              <% end %>
+            </td>
+            <td><%= link_to @book.title, book_path(@book) %></td>
+            <td><span><%= @book.body %></span></td>
+            <% if @book.user == current_user %>
+              <td><%= link_to "Edit", edit_book_path(@book.id) %></td>
+              <td><%= link_to "Destroy", book_path(@book.id), method: :delete %></td>
+            <% end %>
+          </tr>
+          <tr>
+          <td><%= link_to @book.user.name, user_path(@book.user.id) %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
