@@ -5,19 +5,19 @@
     <div class="col-md-3">
       <h1>User info</h1>
         <table class='table'>
-          <% @books.each do |book| %>
+          
             <tr>
-              <%= image_tag book.user.get_profile_image(100,100) %>
+              <%= image_tag @user.get_profile_image(100,100) %>
             </tr>
             <tr>
               <th>name</th>
-	            <th><span><%= book.user.name %></span></th>
+	            <th><span><%= @user.name %></span></th>
             </tr>
             <tr>
               <th>introduction</th>
-	            <th><span><%= book.user.introduction %></span></th>
+	            <th><span><%= @user.introduction %></span></th>
             </tr>
-          <% end %>
+          
         </table>
             
 
