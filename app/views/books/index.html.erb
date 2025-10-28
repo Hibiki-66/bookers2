@@ -3,32 +3,7 @@
 <div class="containar px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
-      <h1>User info</h1>
-        <table class='table'>
-          
-            <tr>
-              <%= image_tag @user.get_profile_image(100,100) %>
-            </tr>
-            <tr>
-              <th>name</th>
-	            <th><span><%= @user.name %></span></th>
-            </tr>
-            <tr>
-              <th>introduction</th>
-	            <th><span><%= @user.introduction %></span></th>
-            </tr>
-          
-        </table>
-            
-
-      <h1>New book</h1>
-      <%= form_with model: @book do |f| %>
-        <h4>Title</h4>
-        <%= f.text_field :title %>
-        <h4>Opinion</h4>
-        <%= f.text_area :body %>
-        <%= f.submit 'Create Book' %>
-      <% end %>
+      <%= render 'user', book: @book, user: @user %>
     </div>
 
     <div class="offset-md-1">
