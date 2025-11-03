@@ -24,7 +24,7 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                 <li>
-                  <%= link_to user_path(@user), class: 'nav-link text-light' do %>
+                  <%= link_to user_path(current_user.id), class: 'nav-link text-light' do %>
                     <i class="fa-solid fa-house"></i> Home
                   <% end %>
                 </li>
@@ -50,7 +50,7 @@
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-light' do %>
+                  <%= link_to about_path, class: 'nav-link text-light' do %>
                     <i class="fa-solid fa-link"></i> About
                   <% end %>
                 </li>
@@ -72,7 +72,11 @@
     </header>
 
     <main class="mb-auto">
-      <%= yield %>
+      <div class="container px-5 px-sm-0">
+        <div class="row">
+          <%= yield %>
+        </div>
+      </div>
     </main>
 
     <footer>
